@@ -6,5 +6,5 @@ read -p "Enter today's day of week: " dow
 if [ -n "$dow" ]; then
     echo $dow
 else
-    echo "Input is empty"
+    echo "Input is empty. Please enter a valid day of week."
 fi

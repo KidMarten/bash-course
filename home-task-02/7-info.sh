@@ -6,4 +6,9 @@ read -p "Привет, какой сегодня день недели? " dow
 echo "$dow"
 read -p "Уже $dow Какое сегодня число? " day_num
 echo "$day_num"
-echo "Не думал что $dow будет $day_num числа. Я считаю что сегодня $(date)"
+
+if [[ -n "$dow" && -n "$day_num" ]]; then
+    echo "Не думал что $dow будет $day_num числа. Я считаю что сегодня $(date)"
+else
+    echo "Введите день и число месяца."
+fi
