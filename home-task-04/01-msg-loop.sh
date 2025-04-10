@@ -4,7 +4,7 @@
 
 read -p "Enter your message: " msg
 
-if [ -n msg ]; then
+if [ -z $msg ]; then
   echo "Input is empty. Try again."
   exit 1
 fi

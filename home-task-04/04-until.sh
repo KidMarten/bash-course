@@ -5,6 +5,6 @@
 counter=1
 
 until [ $counter -gt 10 ]; do
-  expr $counter \* 3
+  echo $((counter * 3))
   counter=$(( $counter + 1 ))
 done
