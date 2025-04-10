@@ -3,6 +3,12 @@
 # Скрипт оболочки, который запрашивает два целых числа и выводит частное и остаток от их деления.
 
 # Большее число становится делимым, а меньшее знаменателем 
+
+if [[ -z $1 || -z $2 ]]; then
+  echo "Enter 2 values"
+  exit
+fi
+
 if [ $2 -gt $1 ]; then
   dividend=$2
   denominator=$1
@@ -11,7 +17,7 @@ else
   denominator=$2
 fi
 
-quotient=$(expr $dividend / $denominator)
+quotient=$((dividend / denominator))
 modulo=$(($dividend % $denominator))
 
 echo "Частное: $quotient"

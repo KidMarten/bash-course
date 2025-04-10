@@ -9,9 +9,9 @@ fi
 modulo=$(( $1 % 2 ))
 
 if [ $modulo -eq 0 ]; then
-  echo "Number X is even"
+  echo "Number $1 is even"
 else
-  echo "Number X is odd"
+  echo "Number $1 is odd"
 fi
 # Если аргумент отсутствует, или указано более двух аргументов, или указано отрицательное число, то выводится сообщение об ошибке: 'Please send one non negative number'
 
