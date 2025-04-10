@@ -17,6 +17,11 @@ else
   denominator=$2
 fi
 
+if [ $denominator -eq 0 ]; then
+  echo "Enter non zero values"
+  exit
+fi
+
 quotient=$((dividend / denominator))
 modulo=$(($dividend % $denominator))
 
