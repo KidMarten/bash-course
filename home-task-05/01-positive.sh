@@ -5,7 +5,7 @@
 is_positive () {
   if [ -z $1 ]; then
     echo "Ввод пустой. Введите число."
-    exit 1
+    return 1
   fi
 
   if ! [[ $1 =~ ^-?[0-9]+$ ]]; then
