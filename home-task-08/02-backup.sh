@@ -15,6 +15,7 @@ backup_time=$(date "+%Y-%m-%d")
 
 for dir in $backup_dirs; do
   arc_name=$(echo ${dir}.${backup_time}.tar.gz)
-  tar -czvf /tmp/$arc_name
+  tar -czvf /tmp/$arc_name $dir
   scp $arc_name $dest_server:$dest_dir
+  rm /tmp/$arc_name
 done

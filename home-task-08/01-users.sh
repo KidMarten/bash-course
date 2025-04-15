@@ -6,7 +6,7 @@ add_user () {
   local username=$1
   local uid=$2
   local hostname=$3
-  echo $hostname "echo $PASSWORD | sudo -S useradd -m -s /bin/bash -u $uid $username"
+  ssh $hostname "echo $PASSWORD | sudo -S useradd -m -s /bin/bash -u $uid $username"
 }
 
 read -p "Enter user name: " username
@@ -17,8 +17,6 @@ if [[ -z $username || -z $uid ]]; then
   exit 1
 fi
 
-hosts=$(cat home-task-08/hosts.txt | xargs printf "%s ")
-
-for host in $hosts; do
+while IFS= read -r $host; do
     add_user $username $uid $host
-done
+done < home-task-08/hosts.txt
